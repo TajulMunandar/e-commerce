@@ -31,8 +31,8 @@ const LoginScreen: React.FC<Props> = ({ navigation }) => {
       // Store the token in AsyncStorage or any global state
       Alert.alert("Success", "Logged in successfully");
       navigation.navigate("Home", { token });
-    } catch (error) {
-      Alert.alert("Error", "Login failed. Please try again.");
+    } catch (error: any) {
+      Alert.alert("Error", `Login failed: ${error.message}`);
     }
   };
 
